@@ -1,0 +1,266 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #F3F5FC;
+	color: #000;
+	font-family: 'Roboto', sans-serif;
+}
+
+.container {
+	width: 100%;
+	max-width: 1440px;
+	margin: 20px auto;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, auto);
+
+	grid-template-areas: "header header sidebar"
+						 "content content sidebar"
+						 "footer footer footer";
+}
+
+.container > div,
+.container .header,
+.container .content,
+.container .sidebar,
+.container .footer {
+	padding: 20px;
+	border-radius: 4px;
+}
+
+.container .header {
+	grid-area: header;
+}
+
+.container .header .logo {
+    margin-left: 44px;
+}
+
+.container .content {
+	grid-area: content;
+	margin-left: 15%;
+}
+
+.container .content .box .text-input {	
+    border-radius: .5em;
+    border: 1px solid rgba(0, 0, 0, .0);
+    display: block;   /* Esto tiró los botonnes a la siguiente línea */
+    width: 100%;
+    height: 380px;
+	background-color: #F3F5FC;
+    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 150%;
+
+    /* identical to box height, or 48px */
+
+    /* Dark blue/dark-blue-300 */
+    color: #0A3871;
+
+}
+
+.text-output {	
+    border-radius: .5em;
+    border: 1px solid rgba(0, 0, 0, .0);
+    width: 100%;
+    height: 495px;
+    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 150%;
+
+    /* identical to box height, or 48px */
+
+    /* Dark blue/dark-blue-300 */
+    color: #495057;
+
+    *float: initial;
+
+}
+
+.container .content .box .btn-ppal,
+.btn {
+    /* Button */
+
+    /* Auto layout */
+    width: 49%;
+    min-width: 164.15;
+    height: 67px;
+
+    /* Dark blue/dark-blue-300 */
+    background: #0A3871;
+    border-radius: 24px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.btn {
+	/* Light gray */
+    background: #D8DFE8;
+
+	/* Dark blue/dark-blue-300 */
+    border: 1px solid #0A3871;
+    box-sizing: border-box;
+}
+
+#btn-copiar {
+
+    width: 100%;
+
+    margin-top: 15px;
+    margin-left: auto;
+}
+
+
+.container .content .form > form > label {
+    display: block;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 150%;
+
+    /* identical to box height, or 18px */
+
+    /* Gray/gray-400 */
+    color: #495057;
+
+    opacity: 0.8;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 8px;
+}
+
+
+.container .sidebar {
+	grid-column: 3 / 4;
+	background: #fff;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    border-radius: 32px;
+    margin-right: 10px;
+	grid-area: sidebar;
+}
+
+.container .sidebar .munieco > h2 {
+	/* Ningún mensaje fue encontrado */
+
+    position: static;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 120%;
+
+    /* or 29px */
+    text-align: center;
+
+    /* Gray/gray-500 */
+    color: #343A40;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 16px 0px;
+}
+
+.container .sidebar .munieco > p,
+.container .footer {
+	/* Ingresa el texto que desees encriptar o desencriptar. */
+
+    position: static;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+
+    /* or 24px */
+    text-align: center;
+
+    /* Gray/gray-400 */
+    color: #495057;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 16px 0px;
+}
+
+.container .footer {
+	grid-area: footer;
+}
+
+@media screen and (max-width: 768px){
+	.container {
+		grid-template-areas: "header header header"
+						 "content content content"
+						 "sidebar sidebar sidebar"
+						 "footer footer footer";
+	}
+
+	.container .content {
+		margin-left: auto;
+		margin-top: auto;
+	}
+
+	.container .sidebar .munieco img {
+		display: none;
+	}
+
+    .container .sidebar {
+        display: block;
+        margin-left: 10px;
+    }
+
+    .container .content .box .text-input {	
+        height: 340px;
+    }
+
+    .text-output {
+        height: auto;
+    }
+
+    .container .header .logo {
+        margin-left: auto;
+    }
+
+}
+
+@media screen and (max-width: 375px){
+	.container .content .box .btn-ppal,
+    .container .content .box .btn {
+        /* Button */
+
+        /* Auto layout */
+        
+        width: 100%;
+    }
+    
+}
