@@ -23,7 +23,7 @@ body {
 						 "footer footer footer";
 }
 
-.container > div,
+.container > div0,
 .container .header,
 .container .content,
 .container .sidebar,
@@ -50,7 +50,8 @@ body {
     border: 1px solid rgba(0, 0, 0, .0);
     display: block;   /* Esto tiró los botonnes a la siguiente línea */
     width: 100%;
-    height: 380px;
+    height: 300px;
+    *padding-bottom: 300px;
 	background-color: #F3F5FC;
     
     font-family: Inter;
@@ -64,13 +65,14 @@ body {
     /* Dark blue/dark-blue-300 */
     color: #0A3871;
 
+    *text-transform: lowercase;
 }
 
 .text-output {	
     border-radius: .5em;
     border: 1px solid rgba(0, 0, 0, .0);
     width: 100%;
-    height: 495px;
+    height: 465px;
     
     font-family: Inter;
     font-style: normal;
@@ -104,6 +106,8 @@ body {
     flex: none;
     order: 0;
     flex-grow: 0;
+
+    margin-top: 25px;
 }
 
 .btn {
@@ -123,14 +127,28 @@ body {
     margin-left: auto;
 }
 
-
-.container .content .form > form > label {
+.container .content .form .textGrabber .tittle-ppal {
     display: block;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 38px;
+
+    opacity: 0.8;
+
+    padding: 0 0 10px 5px;
+}
+
+.container .content .form .textGrabber #message {
+    *display: block;
+    position: absolute; 
+
 
     font-family: Inter;
     font-style: normal;
     font-weight: normal;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 150%;
 
     /* identical to box height, or 18px */
@@ -215,6 +233,15 @@ body {
 
 .container .footer {
 	grid-area: footer;
+}
+
+.colorWarning  {
+    position: absolute; 
+    *display: inline-block;
+    background-color: yellow; 
+    color: #1D438A;
+    font-size: 16px;
+    *z-index: 10;
 }
 
 @media screen and (max-width: 768px){
