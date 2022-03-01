@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,27 +8,29 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Challenge 1</title>
 </head>
+
 <body>
     <div class="container">
         <header class="header">
-            <!--<h2>HEADER</h2>-->
             <section class="logo">
                 <img src="images/logo.png" alt="logo">
             </section>
         </header>
         <main class="content">
             <section class="form box">
-                <form action="">
-                    <!--<input type="text" class="text-input" id="text-input" placeholder="Ingrese el texto aquí">-->
-                    <textarea name="" class="text-input" id="text-input" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
-                    <label for="input-text">(!) Solo letras minúsculas, sin acento</label>
-                    <button type="button" class="btn-ppal" id="btn-encrypt">Encriptar</button>
-                    <button type="button" class="btn" id="btn-decrypt">Desencriptar</button>
+                <form id="textGrabber" class="textGrabber" name="textGrabber">
+                    <label forHTML="text-input" class="tittle-ppal">Digite su texto:</label>
+                    <textarea name="" class="text-input" id="text-input" cols="30" rows="10"
+                        placeholder="Ingrese el texto aquí" onkeyup="validar()" onblur="validar()"></textarea>
+                    <div id="message">
+                        (!) Solo letras minúsculas (a-z), sin acento.
+                    </div>
+                    <button type="button" class="btn-ppal" id="btn-encrypt" onclick="verificar()">Encriptar</button>
+                    <button type="button" class="btn" id="btn-decrypt" onclick="verificar()">Desencriptar</button>
                 </form>
             </section>
         </main>
         <aside class="sidebar">
-            <!--<h3>SIDEBAR</h3>-->
             <section class="munieco">
                 <img id="munieco" src="images/munieco.png" alt="munieco">
                 <h2 id="subtitulo-munieco">Ningún mensaje fue encontrado</h2>
@@ -35,15 +38,15 @@
             </section>
         </aside>
         <footer class="footer">
-            <!--<h3>FOOTER</h3>-->
             <p>Author: Juan Santa<br>
-            <a href="https://app.aluracursos.com/user/jcsantahurtado">Aprendiz, alura LATAM</a></p>
+                <a href="https://app.aluracursos.com/user/jcsantahurtado">Aprendiz, alura LATAM</a>
+            </p>
         </footer>
 
+        <script src="js/validate-code.js"></script>
         <script src="js/msg.js"></script>
         <script src="js/encrypt.js"></script>
         <script src="js/decrypt.js"></script>
-        <!--<script src="js/copy.js"></script>-->
-    
 </body>
+
 </html>
