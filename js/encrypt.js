@@ -1,6 +1,5 @@
 var inputText = document.querySelector("#text-input");
-var btnEncrypt = document.querySelector("#btn-encrypt"); 
-
+var btnEncrypt = document.querySelector("#btn-encrypt");
 
 vowelsEncryption = ["a", "e", "i", "o", "u"];
 
@@ -13,32 +12,27 @@ function encrypt() {
 
     count = 0;
 
-    while (count < phrase.length) {
+    isTextValid = validar();
+
+    while (count < phrase.length && isTextValid) {
         var element = phrase[count];
 
-
         for (var index = 0; index < 5; index++) {
-    
+
             if (element == vowelsEncryption[index]) {
                 phraseEncrypt += vowelsDecryption[index];
                 break;
-                
+
             } else if (index == 4) {
                 phraseEncrypt += element;
-
             }
-        
         }
-        
         count++;
-        
     }
 
-
-    outputText.value = phraseEncrypt;
-    outputText.focus();
-    inputText.value = "";
-    
+    if (isTextValid) {
+        outputText.value = phraseEncrypt;
+        outputText.focus();
+        inputText.value = "";
+    }
 }
-
-btnEncrypt.addEventListener('click', encrypt);

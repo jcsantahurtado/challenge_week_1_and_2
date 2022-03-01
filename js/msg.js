@@ -2,7 +2,6 @@ var existeRectangulo = false;
 
 var botonEncriptar = document.querySelector(".btn-ppal");
 var munieco = document.querySelector(".munieco");
-var texto = document.querySelector(".text-input");
 
 const msg = document.createElement("section");
 msg.className = "msg";
@@ -21,25 +20,18 @@ msg.appendChild(btn);
 
 const aside = document.querySelector(".sidebar");
 
-
 botonEncriptar.addEventListener("click", function (event) {
 
     event.preventDefault();
 
-    if ((existeRectangulo == false) && texto.value != "") {
+    if ((existeRectangulo == false) && validar()) {
 
         existeRectangulo = true;
 
         munieco.remove();
 
-
-
         aside.appendChild(msg);
-
-
-
     }
-
 });
 
 
