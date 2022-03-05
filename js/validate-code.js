@@ -12,7 +12,7 @@ function validar() {
     input.willValidate = false;
 
     // El pattern que vamos a comprobar
-    const pattern = new RegExp('^[a-z]+$');
+    const pattern = new RegExp('^[a-z ]+$');
 
     // Primera validacion, si input esta vacio entonces no es valido
     if (!input.value) {

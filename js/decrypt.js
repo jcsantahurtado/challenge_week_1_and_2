@@ -20,7 +20,12 @@ function decrypt() {
 
         for (var index = 0; index < 5; index++) {
 
-            if (element == vowelsEncryption[index]) {
+            // l = decryption vowel length
+            var l = -1;
+            l += vowelsDecryption[index].length;
+
+            if (element == vowelsDecryption[index][0] && phrase[count + l] == vowelsDecryption[index][l]) {
+
                 phraseDecrypt += vowelsEncryption[index];
                 count += vowelsDecryption[index].length;
                 break;
